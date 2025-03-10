@@ -1,95 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from "react";
+import styles from "./page.module.css"; 
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={styles.container}>
+      <img src="/profile.jpg" alt="Profile" className={styles.profileImage} />
+      
+      <div className={styles.introContainer}>
+        <h1 className={styles.title}>Welcome to My Portfolio</h1>
+        <p className={styles.description}>
+          I am a Software Engineer in japan. Born in 2000, I majored in Computer Science at Niigata University. My research focused on epidemic communication for drones.
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+Currently, I work at a company that promotes digital transformation (DX) through data utilization, where I am engaged in the development of AI-powered web systems.
+        </p>
+      </div>
+
+      <div className={styles.skillsContainer}>
+        <h2 className={styles.skillsTitle}>My Skills</h2>
+        <ul className={styles.skillsList}>
+          <li>Python</li>
+          <li>AWS</li>
+          <li>TypeScript</li>
+          <li>Next.js</li>
+          <li>React</li>
+        </ul>
+      </div>
+
+      <div className={styles.projectsContainer}>
+        <h2 className={styles.projectsTitle}>My Projects</h2>
+        <ul className={styles.projectsList}>
+          <li><a href="https://github.com/your-github-username/project1" target="_blank" rel="noopener noreferrer">Project 1</a></li>
+          <li><a href="https://github.com/your-github-username/project2" target="_blank" rel="noopener noreferrer">Project 2</a></li>
+          <li><a href="https://github.com/your-github-username/project3" target="_blank" rel="noopener noreferrer">Project 3</a></li>
+        </ul>
+      </div>
+
+      <div className={styles.linkContainer}>
+        <a
+        href="https://github.com/your-github-username"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.githubLink}
+        >
+          Visit My GitHub
+        </a>
+
+        <footer className={styles.footer}>
+        <p>Follow me on Instagram: 
+          <a href="https://instagram.com/your-instagram-username" target="_blank" rel="noopener noreferrer" className={styles.instagramLink}>
+            @your-instagram-username
           </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        </p>
       </footer>
+      </div>
     </div>
   );
 }

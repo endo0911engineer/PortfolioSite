@@ -1,0 +1,236 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: #121212;
+  color: white;
+  font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.navContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+}
+
+.navLinks li {
+  margin: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.navLinks a:hover {
+  color: #00d4ff;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+}
+
+.helloWorld {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00d4ff;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.aboutSection {
+  width: 100%;
+  max-width: 800px;
+  padding: 60px 50px;
+  text-align: center;
+  margin: auto;
+  background: linear-gradient(135deg, rgba(25, 25, 25, 0.9), rgba(40, 40, 40, 0.9));
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skillsContainer, .interestsContainer {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.skillsList {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+
+.skillsList li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.projectsSection {
+  width: 100%;
+  max-width: 1000px;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.projectCard {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+.projectCard h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.projectCard p {
+  color: #aaaaaa;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.projectCard a {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.projectCard a:hover {
+  background: #005bb5;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
+  }
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 4px 10x rgba(0, 0, 0, 0.5);
+  }
+  .showMenu {
+    display: flex;
+  }
+
+  .aboutSection {
+    padding: 40px 15px;
+  }
+  
+  .skillsList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr; /* スマホでは1列表示 */
+  }
+
+  .projectCard {
+    width: 90%;
+    margin: 0 auto; /* センター配置 */
+  }
+}
